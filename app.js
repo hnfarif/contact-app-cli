@@ -13,26 +13,10 @@ const path = {
     }
 }
 
-const question1 = () => {
+const writeQuestion = (question) => {
     return new Promise((resolve, reject) => {
-        rl.question('Masukkan Nama: ', (name) => {
-            resolve(name);
-        });
-    });
-}
-
-const question2 = () => {
-    return new Promise((resolve, reject) => {
-        rl.question('Masukkan Email: ', (email) => {
-            resolve(email);
-        });
-    });
-}
-
-const question3 = () => {
-    return new Promise((resolve, reject) => {
-        rl.question('Masukkan No HP: ', (phone) => {
-            resolve(phone);
+        rl.question(question, (answer) => {
+            resolve(answer);
         });
     });
 }
@@ -56,9 +40,9 @@ const createContact = async () => {
     console.log('Tambah Kontak');
     console.log('==================');
 
-    const name = await question1();
-    const email = await question2();
-    const phone = await question3();
+    const name = await writeQuestion("Masukkan Nama: ");
+    const email = await writeQuestion("Masukkan Email: ");
+    const phone = await writeQuestion("Masukkan no HP: ");
 
     let contact = [{
         name,
@@ -150,9 +134,9 @@ const formUpdateContact = (contact) => {
         console.log('\n');
         console.log('Masukkan data baru untuk mengubah kontak');
         console.log('==========================================');
-        const name = await question1();
-        const email = await question2();
-        const phone = await question3();
+        const name = await writeQuestion("Masukkan Nama Baru: ");
+        const email = await writeQuestion("Masukkan Email Baru: ");
+        const phone = await writeQuestion("Masukkan no HP Baru: ");
 
         resolve({
             name,
@@ -237,7 +221,7 @@ const searchContact = () => {
             const file = fs.readFileSync(path.dirContacts(), 'utf-8');
             const contacts = JSON.parse(file);
             const contact = contacts.filter((value) => {
-                return value.name.toLowerCase().includes(keyword.toLowerCase());
+                return value.name.toLowerCase().includes(keyword.toLowerCase()) || value.phone.includes(keyword) || value.email.toLowerCase().includes(keyword.toLowerCase());
             });
 
             if (contact.length === 0) {
