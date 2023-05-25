@@ -1,0 +1,15 @@
+{
+  "name": "contact-app",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Belajar NodeJS membuat aplikasi Contact",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hanif Arif",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {}
+}
