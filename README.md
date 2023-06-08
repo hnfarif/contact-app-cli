@@ -1,6 +1,6 @@
 # contact-app-cli
 Selamat datang di aplikasi kontak berbasis cli. Proyek ini merupakan hasil belajar node JS dasar dengan membuat proyek sederhana 
-yaitu membuat pencatatan kontak berbasis CLI.
+yaitu membuat manajemen kontak berbasis CLI melalui readline atau command.
 
 ## Cara Menjalankan Kode
 
