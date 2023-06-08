@@ -6,7 +6,17 @@ yaitu membuat pencatatan kontok berbasis CLI.
 
 Berikut adalah langkah-langkah untuk menjalankan kode proyek ini:
 
-1. Pastikan Anda memiliki . Jika belum, Anda dapat menginstalnya dengan menjalankan perintah berikut:
+1. Clone repositori ini ke komputer Anda dengan menjalankan perintah
 
    ```sh
    git clone https://github.com/hnfarif/contact-app-cli
+   
+2. Masuk ke direktori proyek
+   
+    ```sh
+   cd [nama direktori]
+   
+3. Jalankan perintah berikut untuk menjalankan kode proyek 
+
+ ```sh
+   node app
